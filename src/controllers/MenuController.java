@@ -34,10 +34,10 @@ public class MenuController {
                     break;
                 case "5":
                     exit = true;
-                    consoleView.showMessage("Saliendo del sistema...");
+                    consoleView.showMessage("Saliendo");
                     break;
                 default:
-                    consoleView.showMessage("Opción inválida. Por favor intente nuevamente.");
+                    consoleView.showMessage("Opción inválida");
             }
         }
     }
@@ -48,9 +48,9 @@ public class MenuController {
 
         Contact<String, String> newContact = new Contact<>(name, phone);
         if (contactManager.addContact(newContact)) {
-            consoleView.showMessage("Contacto agregado exitosamente!");
+            consoleView.showMessage("Contacto agregado ");
         } else {
-            consoleView.showMessage("Error: Ya existe un contacto con ese nombre.");
+            consoleView.showMessage("Ya existe un contacto con ese nombre.");
         }
     }
 
@@ -68,9 +68,9 @@ public class MenuController {
     private void deleteContact() {
         String name = consoleView.getInput("Ingrese el nombre a borrar: ");
         if (contactManager.deleteContactByName(name)) {
-            consoleView.showMessage("Contacto borrado exitosamente!");
+            consoleView.showMessage("Contacto borrado ");
         } else {
-            consoleView.showMessage("Error: No se encontró el contacto a borrar.");
+            consoleView.showMessage("No se encontró el contacto.");
         }
     }
 
