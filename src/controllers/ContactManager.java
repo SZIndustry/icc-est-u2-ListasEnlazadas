@@ -22,14 +22,14 @@ public class ContactManager {
     public void deleteContactByName(String name) {
         Contact<String, String> temp = new Contact<>(name, "");
         contacts.deleteByValue(temp);
-    }
+    }   
 
     public void printList() {
         if (contacts.getSize() == 0) {
-            System.out.println("Contactos vacíos");
+            System.out.println("No contacts available.");
             return;
         }
-        System.out.println("Lista de contactos");
+        System.out.println("Contact List:");
         contacts.print();
     }
 }

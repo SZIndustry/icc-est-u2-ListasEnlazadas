@@ -6,7 +6,7 @@ public class ConsoleView {
     private Scanner scanner = new Scanner(System.in);
 
     public void displayMenu() {
-        System.out.println("\n--- Contact Manager Menu ---");
+        System.out.println("\n--- Menu contacto  ---");
         System.out.println("1. Agregar cntacto");
         System.out.println("2. Buscar contacto");
         System.out.println("3. Borrar contacto");
