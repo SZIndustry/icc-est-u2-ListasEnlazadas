@@ -9,15 +9,23 @@ public class Contact<T, U> {
         this.phone = phone;
     }
 
-    public T getName() {
-         return name; 
-        }
-    public U getPhone() {
-         return phone; 
-        }
+    public T getName() { return name; }
+    public U getPhone() { return phone; }
 
     @Override
     public String toString() {
         return "Name: " + name + ", Phone: " + phone;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Contact contact = (Contact) obj;
+        return name.equals(contact.getName()) && name != null;
     }
 }

@@ -10,8 +10,12 @@ public class ContactManager {
         this.contacts = new LinkedList<>();
     }
 
-    public void addContact(Contact<String, String> contact) {
+    public boolean addContact(Contact<String, String> contact) {
+        if (findContactByName(contact.getName()) != null) {
+            return false; // Contacto ya existe
+        }
         contacts.appendToTail(contact);
+        return true;
     }
 
     public Contact<String, String> findContactByName(String name) {
@@ -19,17 +23,22 @@ public class ContactManager {
         return contacts.findByValue(temp);
     }
 
-    public void deleteContactByName(String name) {
+    public boolean deleteContactByName(String name) {
         Contact<String, String> temp = new Contact<>(name, "");
-        contacts.deleteByValue(temp);
-    }   
+        Contact<String, String> found = contacts.findByValue(temp);
+        if (found != null) {
+            contacts.deleteByValue(temp);
+            return true;
+        }
+        return false;
+    }
 
     public void printList() {
         if (contacts.getSize() == 0) {
-            System.out.println("No contacts available.");
+            System.out.println("No hay contactos disponibles.");
             return;
         }
-        System.out.println("Contact List:");
+        System.out.println("--- Lista de Contactos ---");
         contacts.print();
     }
 }
