@@ -26,10 +26,10 @@ public class ContactManager {
 
     public void printList() {
         if (contacts.getSize() == 0) {
-            System.out.println("No contacts available.");
+            System.out.println("Contactos vacíos");
             return;
         }
-        System.out.println("Contact List:");
+        System.out.println("Lista de contactos");
         contacts.print();
     }
 }
